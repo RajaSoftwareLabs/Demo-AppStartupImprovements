@@ -15,3 +15,11 @@ dependencyResolutionManagement {
 
 rootProject.name = "Quick Cart"
 include ':app'
+include ':userAuthentication:userAuthentication-prod'
+include ':productCatalog:productCatalog-prod'
+include ':shoppingCart:shoppingCart-prod'
+include ':paymentGateway:paymentGateway-prod'
+include ':paymentGateway:paymentGateway-tests'
+include ':productCatalog:productCatalog-tests'
+include ':shoppingCart:shoppingCart-tests'
+include ':userAuthentication:userAuthentication-tests'

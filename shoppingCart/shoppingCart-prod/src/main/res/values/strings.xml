@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Shopping Cart</string>
+    <string name="shopping_cart_title_text">Shopping Cart screen</string>
+    <string name="shopping_cart_button_text">Proceed to payment</string>
+</resources>

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Product Catalog</string>
+    <string name="product_catalog_title_text">Product catalog screen</string>
+    <string name="product_catalog_button_text">Go to cart</string>
+</resources>
