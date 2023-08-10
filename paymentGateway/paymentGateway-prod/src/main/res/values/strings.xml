@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Payment Gateway</string>
+    <string name="payment_gateway_title_text">Payment Gateway screen</string>
+</resources>

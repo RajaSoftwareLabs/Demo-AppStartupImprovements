@@ -1,438 +1,470 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
-    <ScrollView
-        android:id="@+id/main_activity_scroll_view"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp"
+        tools:context=".MainActivity">
 
-        <LinearLayout
+        <!--    Form Title-->
+        <TextView
+            android:id="@+id/form_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="16dp"
+            android:text="@string/registration_form"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/first_name_text_input_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            app:errorEnabled="true"
+            app:errorTextColor="@color/error_red"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/form_title">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/first_name_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:hint="@string/first_name_hint"
+                android:inputType="text" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/middle_name_text_input_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            app:errorEnabled="true"
+            app:errorTextColor="@color/error_red"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/first_name_text_input_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/middle_name_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:hint="@string/middle_name_hint"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/last_name_text_input_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            app:errorEnabled="true"
+            app:errorTextColor="@color/error_red"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/middle_name_text_input_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/last_name_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:hint="@string/last_name_hint"
+                android:inputType="text" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/date_of_birth_text_input_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            app:errorEnabled="true"
+            app:errorTextColor="@color/error_red"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/last_name_text_input_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/date_of_birth_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:hint="@string/date_of_birth_hint"
+                android:inputType="date" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/gender_text_input_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="16dp"
+            android:minHeight="48dp"
+            app:errorEnabled="true"
+            app:errorTextColor="@color/error_red"
+            app:helperText="@string/gender_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/date_of_birth_text_input_layout">
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/male_checkbox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/gender_text_male" />
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/female_checkbox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/gender_text_female" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/mobile_number_text_input_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            app:errorEnabled="true"
+            app:errorTextColor="@color/error_red"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/gender_text_input_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/mobile_number_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:hint="@string/mobile_number_hint"
+                android:inputType="phone" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/email_address_text_input_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            app:errorEnabled="true"
+            app:errorTextColor="@color/error_red"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mobile_number_text_input_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/email_address_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:hint="@string/email_address_hint"
+                android:inputType="textEmailAddress" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/location_address_text_input_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            app:errorEnabled="true"
+            app:errorTextColor="@color/error_red"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/email_address_text_input_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/location_address_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:hint="@string/location_address_hint"
+                android:inputType="text" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--    Education Details-->
+        <TextView
+            android:id="@+id/educationDetailsTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:orientation="vertical">
+            android:text="@string/education_details_form_title"
+            android:textAlignment="center"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/location_address_text_input_layout" />
 
-            <!--  Form Title-->
+        <!-- 10th details-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ssc_school_text_input_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="16dp"
+            android:minHeight="48dp"
+            app:errorEnabled="true"
+            app:errorTextColor="@color/error_red"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/educationDetailsTitle">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ssc_school_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:hint="@string/ssc_school_name_hint"
+                android:inputType="text" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:id="@+id/ssc_marks_and_grade_linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ssc_school_text_input_layout">
+
             <TextView
-                android:id="@+id/form_title"
+                android:id="@+id/ssc_marks_and_grade"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="16dp"
-                android:text="@string/registration_form"
-                android:textAlignment="center"
-                android:textSize="24sp"
-                android:textStyle="bold" />
+                android:layout_weight="1"
+                android:text="@string/ssc_marks_and_grade" />
 
-            <!--  User info linear layout-->
-            <LinearLayout
+            <EditText
+                android:id="@+id/ssc_marks_editText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="16dp"
-                android:orientation="vertical">
+                android:layout_weight="1"
+                android:hint="@string/marks_hint"
+                android:inputType="number" />
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/first_name_text_input_layout"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:minHeight="48dp"
-                    app:errorEnabled="true"
-                    app:errorTextColor="@color/error_red">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/first_name_edit_text"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
-                        android:hint="@string/first_name_hint"
-                        android:inputType="text" />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/middle_name_text_input_layout"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:minHeight="48dp"
-                    app:errorEnabled="true"
-                    app:errorTextColor="@color/error_red">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/middle_name_edit_text"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
-                        android:hint="@string/middle_name_hint"
-                        android:inputType="text" />
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/last_name_text_input_layout"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:minHeight="48dp"
-                    app:errorEnabled="true"
-                    app:errorTextColor="@color/error_red">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/last_name_edit_text"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
-                        android:hint="@string/last_name_hint"
-                        android:inputType="text" />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-            </LinearLayout>
-
-            <!-- User basic info linear layout-->
-            <LinearLayout
+            <EditText
+                android:id="@+id/ssc_grade_editText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="16dp"
-                android:orientation="vertical">
+                android:layout_weight="1"
+                android:hint="@string/grade_hint"
+                android:inputType="text" />
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/date_of_birth_text_input_layout"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:minHeight="48dp"
-                    app:errorEnabled="true"
-                    app:errorTextColor="@color/error_red">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/date_of_birth_edit_text"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
-                        android:hint="@string/date_of_birth_hint"
-                        android:inputType="date" />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="16dp"
-                    android:orientation="horizontal">
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/gender_text_input_layout"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:minHeight="48dp"
-                        app:errorEnabled="true"
-                        app:errorTextColor="@color/error_red"
-                        app:helperText="Gender">
-
-                        <androidx.appcompat.widget.AppCompatCheckBox
-                            android:id="@+id/male_checkbox"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/gender_text_male" />
-
-                        <androidx.appcompat.widget.AppCompatCheckBox
-                            android:id="@+id/female_checkbox"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/gender_text_female" />
-
-                    </com.google.android.material.textfield.TextInputLayout>
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <!-- User Address and contact info linear layout-->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="16dp"
-                android:orientation="vertical">
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/mobile_number_layout"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:minHeight="48dp"
-                    app:errorEnabled="true"
-                    app:errorTextColor="@color/error_red">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/mobile_number_edit_text"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
-                        android:hint="@string/mobile_number_hint"
-                        android:inputType="number" />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/email_address_layout"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:minHeight="48dp"
-                    app:errorEnabled="true"
-                    app:errorTextColor="@color/error_red">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/email_address_edit_text"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
-                        android:hint="@string/email_address_hint"
-                        android:inputType="textEmailAddress" />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/location_address_layout"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:minHeight="48dp"
-                    app:errorEnabled="true"
-                    app:errorTextColor="@color/error_red">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/location_address_edit_text"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
-                        android:hint="@string/location_address_hint"
-                        android:inputType="text" />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-            </LinearLayout>
-
-            <!-- Optional Details for student discounts -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/educationDetailsTitle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/education_details_form_title"
-                    android:textAlignment="center"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-                <!-- 10th details-->
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/ssc_school_text_input_layout"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginVertical="16dp"
-                    android:minHeight="48dp"
-                    app:errorEnabled="true"
-                    app:errorTextColor="@color/error_red">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/ssc_school_edit_text"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
-                        android:hint="@string/ssc_school_name_hint"
-                        android:inputType="text" />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/ssc_marks_and_grade"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="@string/ssc_marks_and_grade" />
-
-                    <EditText
-                        android:id="@+id/ssc_marks_editText"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:hint="@string/marks_hint"
-                        android:inputType="number" />
-
-                    <EditText
-                        android:id="@+id/ssc_grade_editText"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:hint="@string/grade_hint"
-                        android:inputType="text" />
-
-                </LinearLayout>
-
-                <TextView
-                    android:id="@+id/ssc_marks_and_grade_error"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/marks_and_grade_error"
-                    android:textColor="@color/error_red"
-                    android:visibility="gone" />
-
-                <!-- 12th details-->
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/hsc_college_text_input_layout"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginVertical="16dp"
-                    android:minHeight="48dp"
-                    app:errorEnabled="true"
-                    app:errorTextColor="@color/error_red">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/hsc_college_edit_text"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
-                        android:hint="@string/hsc_college_name_hint"
-                        android:inputType="text" />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/hsc_marks_and_grade"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="@string/hsc_marks_and_grade" />
-
-                    <EditText
-                        android:id="@+id/hsc_marks_editText"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:hint="@string/marks_hint"
-                        android:inputType="number" />
-
-                    <EditText
-                        android:id="@+id/hsc_grade_editText"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:hint="@string/grade_hint"
-                        android:inputType="text" />
-
-                </LinearLayout>
-
-                <TextView
-                    android:id="@+id/hsc_marks_and_grade_error"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/marks_and_grade_error"
-                    android:textColor="@color/error_red"
-                    android:visibility="gone" />
-
-            </LinearLayout>
-
-            <!-- College Details -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:orientation="vertical">
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/college_text_input_layout"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp"
-                    android:minHeight="48dp"
-                    app:errorEnabled="true"
-                    app:errorTextColor="@color/error_red">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/college_edit_text"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
-                        android:hint="@string/college_name_hint"
-                        android:inputType="text" />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/college_course"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-                <RadioGroup
-                    android:id="@+id/college_courses"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <RadioButton
-                        android:id="@+id/course1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/course1" />
-
-                    <RadioButton
-                        android:id="@+id/course2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/course2" />
-
-                    <RadioButton
-                        android:id="@+id/course3"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/course3" />
-
-                    <RadioButton
-                        android:id="@+id/course4"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/course4" />
-
-                    <RadioButton
-                        android:id="@+id/course5"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/course5" />
-                </RadioGroup>
-
-                <TextView
-                    android:id="@+id/college_course_error"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/college_course_error"
-                    android:textColor="@color/error_red"
-                    android:visibility="gone" />
-
-            </LinearLayout>
-
-            <!-- Form Submit Button-->
-            <Button
-                android:id="@+id/submit_button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="64dp"
-                android:text="@string/main_screen_submit_button" />
         </LinearLayout>
-    </ScrollView>
-</LinearLayout>
+
+        <TextView
+            android:id="@+id/ssc_marks_and_grade_error"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/marks_and_grade_error"
+            android:textColor="@color/error_red"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ssc_marks_and_grade_linear_layout" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/ssc_barrier"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="ssc_marks_and_grade_linear_layout,ssc_marks_and_grade_error" />
+
+        <!-- 12th details-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/hsc_college_text_input_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="16dp"
+            android:minHeight="48dp"
+            app:errorEnabled="true"
+            app:errorTextColor="@color/error_red"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ssc_barrier">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/hsc_college_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:hint="@string/hsc_college_name_hint"
+                android:inputType="text" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:id="@+id/hsc_marks_and_grade_linear_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/hsc_college_text_input_layout">
+
+            <TextView
+                android:id="@+id/hsc_marks_and_grade"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/hsc_marks_and_grade" />
+
+            <EditText
+                android:id="@+id/hsc_marks_editText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/marks_hint"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/hsc_grade_editText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/grade_hint"
+                android:inputType="text" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/hsc_marks_and_grade_error"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/marks_and_grade_error"
+            android:textColor="@color/error_red"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/hsc_marks_and_grade_linear_layout" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/hsc_barrier"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="hsc_marks_and_grade_linear_layout,hsc_marks_and_grade_error" />
+
+        <!--Admission College Details-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/college_text_input_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:minHeight="48dp"
+            app:errorEnabled="true"
+            app:errorTextColor="@color/error_red"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/hsc_barrier">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/college_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:hint="@string/college_name_hint"
+                android:inputType="text" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/select_course_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="16dp"
+            android:text="@string/college_course"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/college_text_input_layout" />
+
+        <RadioGroup
+            android:id="@+id/college_courses"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/select_course_title">
+
+            <RadioButton
+                android:id="@+id/course1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/course1" />
+
+            <RadioButton
+                android:id="@+id/course2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/course2" />
+
+            <RadioButton
+                android:id="@+id/course3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/course3" />
+
+            <RadioButton
+                android:id="@+id/course4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/course4" />
+
+            <RadioButton
+                android:id="@+id/course5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/course5" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/college_course_error"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/college_course_error"
+            android:textColor="@color/error_red"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/college_courses" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/college_barrier"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="college_courses,college_course_error" />
+
+        <!--    Form Submit Button-->
+        <Button
+            android:id="@+id/submit_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="64dp"
+            android:layout_marginVertical="16dp"
+            android:text="@string/main_screen_submit_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/college_course_error" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

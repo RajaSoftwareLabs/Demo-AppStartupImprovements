@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">User Authentication</string>
+    <string name="user_authentication_title_text">User Authentication screen</string>
+    <string name="user_authentication_button_text">View catalog</string>
+</resources>
